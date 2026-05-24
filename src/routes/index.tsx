@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@/lib/router-shim";
 import { PageShell } from "@/components/PageShell";
 import { ArrowUpRight } from "lucide-react";
-import portrait from "@/assets/niladri-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -84,7 +83,7 @@ function Home() {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end self-end w-full">
             <div className="relative w-full max-w-lg lg:max-w-xl h-[550px] lg:h-[680px] self-end overflow-hidden flex items-end">
               <img 
-                src={portrait} 
+                src="/niladri-portrait.jpg"
                 className="w-full h-full object-cover object-top brightness-[1.02] contrast-[1.02]" 
                 alt="Niladri Chatterjee" 
               />
