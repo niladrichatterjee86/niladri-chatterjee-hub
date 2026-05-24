@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageShell, PageHeader } from "@/components/PageShell";
+import { PageShell } from "@/components/PageShell";
 import { Compass, GraduationCap, Mic } from "lucide-react";
 
 export const Route = createFileRoute("/collaborations")({
