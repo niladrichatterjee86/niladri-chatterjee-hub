@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { ArrowUpRight } from "lucide-react";
+import portrait from "@/assets/niladri-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
