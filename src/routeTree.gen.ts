@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CollaborationsRouteImport } from './routes/collaborations'
 import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JourneyRoute = JourneyRouteImport.update({
   id: '/journey',
   path: '/journey',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/collaborations': typeof CollaborationsRoute
   '/contact': typeof ContactRoute
   '/journey': typeof JourneyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/collaborations': typeof CollaborationsRoute
   '/contact': typeof ContactRoute
   '/journey': typeof JourneyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,33 @@ export interface FileRoutesById {
   '/collaborations': typeof CollaborationsRoute
   '/contact': typeof ContactRoute
   '/journey': typeof JourneyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blogs' | '/collaborations' | '/contact' | '/journey'
+  fullPaths:
+    | '/'
+    | '/blogs'
+    | '/collaborations'
+    | '/contact'
+    | '/journey'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blogs' | '/collaborations' | '/contact' | '/journey'
-  id: '__root__' | '/' | '/blogs' | '/collaborations' | '/contact' | '/journey'
+  to:
+    | '/'
+    | '/blogs'
+    | '/collaborations'
+    | '/contact'
+    | '/journey'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/blogs'
+    | '/collaborations'
+    | '/contact'
+    | '/journey'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,10 +105,18 @@ export interface RootRouteChildren {
   CollaborationsRoute: typeof CollaborationsRoute
   ContactRoute: typeof ContactRoute
   JourneyRoute: typeof JourneyRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/journey': {
       id: '/journey'
       path: '/journey'
@@ -125,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   CollaborationsRoute: CollaborationsRoute,
   ContactRoute: ContactRoute,
   JourneyRoute: JourneyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
