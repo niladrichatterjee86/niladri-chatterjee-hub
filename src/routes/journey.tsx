@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@/lib/router-shim";
 import { PageShell, PageHeader } from "@/components/PageShell";
 
 export const Route = createFileRoute("/journey")({
@@ -19,39 +19,67 @@ export const Route = createFileRoute("/journey")({
 
 const milestones = [
   {
-    year: "2022 — Present",
-    role: "Director, Trust & Safety",
+    year: "2025 – Present",
+    role: "Director, YouTube Trust & Safety",
     org: "YouTube",
     body:
-      "Leading global teams across AI policy enforcement, integrity operations and product trust. Shaping how responsible AI ships to 2B+ users.",
+      "Leading global teams across policy implementation, complex platform AI integrity frameworks, and digital trust operations at a multi-billion user planetary scale.",
   },
   {
-    year: "2019 — 2022",
-    role: "Head of Integrity Operations",
-    org: "Global Platform",
+    year: "2023 – 2025",
+    role: "Senior Leader, Elections Integrity",
+    org: "YouTube",
     body:
-      "Architected cross-functional integrity programs spanning misinformation, monetization and creator ecosystem health across 40+ markets.",
+      "Directed cross-functional, full-stack trust and safety operations to safeguard user experience and platform integrity during high-profile global elections.",
   },
   {
-    year: "2015 — 2019",
-    role: "Senior Leader, Policy & Product",
-    org: "Big Tech",
+    year: "2019 – 2023",
+    role: "Operations Leader",
+    org: "YouTube",
     body:
-      "Drove the formation of regional policy councils and embedded safety-by-design into core product roadmaps.",
+      "Focus on driving cross-regional policy enforcement architecture and managing scaled operational groups.",
   },
   {
-    year: "2010 — 2015",
-    role: "Strategy & Operations",
-    org: "Management Consulting → Tech",
+    year: "2017 – 2019",
+    role: "Customer Experience Leader",
+    org: "Google Ads",
     body:
-      "Transitioned from consulting to in-house operating roles. Built early machine-learning enforcement pilots before they were mainstream.",
+      "Championed world-class operational strategy to deliver high-impact Google Ads experiences for the global small and medium businesses.",
   },
   {
-    year: "2004 — 2010",
-    role: "Foundations",
-    org: "Engineering & MBA",
+    year: "2015 – 2016",
+    role: "Process Excellence Leader",
+    org: "Ola (ANI Technologies Ltd)",
     body:
-      "Engineering rigor, an MBA, and the formative years that shaped a systems-thinking approach to trust.",
+      "Spearheaded core platform initiatives in driver optimization and fraud prevention, maximizing operational efficiencies and product reliability during aggressive scale phases.",
+  },
+  {
+    year: "2015 – 2015",
+    role: "Consultant",
+    org: "Accenture",
+    body:
+      "Designed value-creation and automation frameworks, driving resource efficiency and strategic alignment via advanced program governance.",
+  },
+  {
+    year: "2014 – 2015",
+    role: "MBA",
+    org: "IIM Calcutta",
+    body:
+      "Mastered cross-functional general management, organizational strategy, and corporate dynamics, graduating with top academic honors (Overall Grade: A).",
+  },
+  {
+    year: "2008 – 2014",
+    role: "Operations and Supply Chain Manager",
+    org: "Steel Authority of India Limited",
+    body:
+      "Led large-scale plant operations, supply chain logistics, and strategic sourcing, leveraging Theory of Constraints (TOC) and Lean Six Sigma to de-bottleneck macro-production environments.",
+  },
+  {
+    year: "2004 – 2008",
+    role: "B Tech (Electrical Engineering)",
+    org: "West Bengal University of Technology",
+    body:
+      "Graduated as the absolute top-ranked scholar out of the entire Engineering cohort across all departments, receiving the prestigious Gold Medal for unmatched academic excellence.",
   },
 ];
 

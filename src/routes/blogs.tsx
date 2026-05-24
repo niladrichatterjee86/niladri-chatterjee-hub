@@ -1,74 +1,62 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@/lib/router-shim";
 import { PageShell, PageHeader } from "@/components/PageShell";
 import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/blogs")({
   head: () => ({
     meta: [
-      { title: "Blogs — Niladri Chatterjee" },
+      { title: "Selected Perspectives — Niladri Chatterjee" },
       {
         name: "description",
         content:
-          "Long-form, data-driven essays on AI, platform integrity and the operating systems of digital trust.",
+          "Exploring the underlying dynamics of leadership, corporate culture, and structural systems.",
       },
-      { property: "og:title", content: "Blogs — Niladri Chatterjee" },
+      { property: "og:title", content: "Selected Perspectives — Niladri Chatterjee" },
       {
         property: "og:description",
-        content: "Essays on AI, integrity and the architecture of trust.",
+        content: "Exploring the underlying dynamics of leadership, corporate culture, and structural systems.",
       },
     ],
   }),
   component: Blogs,
 });
 
-const posts = [
+interface Article {
+  title: string;
+  date: string;
+  category: string;
+  summary: string;
+  externalUrl: string;
+}
+
+const articles: Article[] = [
   {
-    cat: "AI Policy",
-    title: "The Operating System for Responsible AI at Scale",
-    excerpt:
-      "What it actually takes to move responsible AI from principle to production across global markets.",
-    read: "12 min read",
-    date: "March 2026",
+    title: "What NOT to do when trying to bring change in a country?",
+    date: "March 15, 2020",
+    category: "Politics & Society",
+    summary: "True national progress requires citizens to avoid constant criticism and passive activism, drawing on corporate leadership principles to become constructive, responsible agents of change.",
+    externalUrl: "https://www.linkedin.com/pulse/what-do-when-trying-tobring-change-country-niladri-chatterjee/?trackingId=wSGqQy44Tfu97F0X4bdi6A%3D%3D",
   },
   {
-    cat: "Integrity",
-    title: "Why Trust Metrics Should Be Reported Like Revenue",
-    excerpt:
-      "The case for treating platform integrity as a first-class quarterly disclosure.",
-    read: "8 min read",
-    date: "Feb 2026",
+    title: "Stages of psychological safety in a team",
+    date: "September 8, 2019",
+    category: "Team Building",
+    summary: "Managers can assess and cultivate team psychological safety by guiding members through three progressive stages of open critique: from discussing job shortcomings, to evaluating the manager, and finally, to providing peer-to-peer feedback.",
+    externalUrl: "https://www.linkedin.com/pulse/stages-psychological-safety-team-niladri-chatterjee/?trackingId=wSGqQy44Tfu97F0X4bdi6A%3D%3D",
   },
   {
-    cat: "Leadership",
-    title: "Leading Distributed Teams Through Policy Ambiguity",
-    excerpt:
-      "Frameworks for decision velocity when regulation, product and people pull in different directions.",
-    read: "10 min read",
-    date: "Jan 2026",
+    title: "Online ride aggregators may be facing the Kodak moment very soon!",
+    date: "February 24, 2017",
+    category: "Startup Advisory",
+    summary: "Online ride aggregators risk facing a \"Kodak moment\" unless they look beyond private cars and proactively pivot toward technology-driven, high-capacity public transportation solutions that align with the future of sustainable urban mobility.",
+    externalUrl: "https://www.linkedin.com/pulse/online-ride-aggregators-may-facing-kodak-moment-very-soon-chatterjee/?trackingId=wSGqQy44Tfu97F0X4bdi6A%3D%3D",
   },
   {
-    cat: "Data",
-    title: "What 2.7B Sessions Taught Me About Signal vs Noise",
-    excerpt:
-      "A working theory of detection economics and where most teams misallocate.",
-    read: "14 min read",
-    date: "Dec 2025",
-  },
-  {
-    cat: "Strategy",
-    title: "The Quiet Restructuring of Global Trust Teams",
-    excerpt:
-      "How the next five years of T&S org design will diverge from the last ten.",
-    read: "9 min read",
-    date: "Nov 2025",
-  },
-  {
-    cat: "Essay",
-    title: "On Optimism, with Caveats",
-    excerpt:
-      "A personal note on building inside the industry, written for the next cohort of leaders.",
-    read: "6 min read",
-    date: "Oct 2025",
+    title: "Most abused word in business today - ‘Strategy’",
+    date: "February 18, 2017",
+    category: "Leadership",
+    summary: "The business world has overly commoditized and misapplied the term \"strategy\" to describe what is actually tactical or operational work, distracting from the critical execution and bias for action that drive 95% of corporate value.",
+    externalUrl: "https://www.linkedin.com/pulse/most-abused-word-business-today-strategy-niladri-chatterjee/?trackingId=wSGqQy44Tfu97F0X4bdi6A%3D%3D",
   },
 ];
 
@@ -76,35 +64,43 @@ function Blogs() {
   return (
     <PageShell>
       <PageHeader
-        eyebrow="Writing"
-        title="Notes on AI, integrity and the systems behind the screens."
-        intro="Long-form, data-driven essays — written from inside the operating rooms of large platforms."
+        eyebrow="Articles"
+        title="Selected Perspectives"
+        intro="Exploring the underlying dynamics of leadership, corporate culture, and structural systems."
       />
 
       <section className="container-edge pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-          {posts.map((p, i) => (
-            <article
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border max-w-5xl mx-auto border border-border rounded-lg overflow-hidden">
+          {articles.map((article, i) => (
+            <a
               key={i}
-              className="group bg-background p-8 hover:bg-surface transition-colors cursor-pointer flex flex-col min-h-[280px]"
+              href={article.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-[#0a0a0a] p-6 lg:p-8 hover:bg-[#111111] transition-all duration-300 flex flex-col justify-between min-h-[260px] border border-border/10 focus:outline-none focus:ring-1 focus:ring-primary"
             >
-              <div className="flex items-center justify-between mb-8">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-primary uppercase">
-                  {p.cat}
-                </span>
-                <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-primary uppercase font-bold">
+                    {article.category}
+                  </span>
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground group-hover:text-primary transition-colors">
+                    <span className="font-mono text-[10px]">Read on LinkedIn</span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.5} />
+                  </div>
+                </div>
+                <h3 className="text-lg lg:text-xl font-bold tracking-tight text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  {article.title}
+                </h3>
+                <p className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed line-clamp-3">
+                  {article.summary}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold leading-snug mb-3 group-hover:text-primary transition-colors">
-                {p.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-auto">
-                {p.excerpt}
-              </p>
-              <div className="mt-8 pt-6 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
-                <span>{p.date}</span>
-                <span>{p.read}</span>
+              <div className="mt-8 pt-4 border-t border-border/30 flex items-center justify-between text-xs font-mono text-neutral-500">
+                <span>{article.date}</span>
+                <span>LinkedIn Pulse</span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </section>

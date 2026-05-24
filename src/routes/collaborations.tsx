@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@/lib/router-shim";
 import { PageShell } from "@/components/PageShell";
-import { Compass, GraduationCap, Mic } from "lucide-react";
+import { Compass, GraduationCap, Mic, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/collaborations")({
   head: () => ({
@@ -93,7 +93,7 @@ function Collaborations() {
                 <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                   {p.s}
                 </p>
-                <ul className="space-y-2 mb-5">
+                <ul className="space-y-2 mb-2">
                   {p.points.map((pt) => (
                     <li
                       key={pt}
@@ -104,15 +104,23 @@ function Collaborations() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 text-sm border-b border-primary pb-1 hover:gap-3 transition-all"
-                >
-                  Inquire →
-                </Link>
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between border border-border bg-surface/20 rounded-xl p-6 lg:p-8 gap-6">
+          <div>
+            <h4 className="text-lg font-semibold tracking-tight">Interested in collaborating?</h4>
+            <p className="text-muted-foreground text-sm mt-1">Let's discuss how we can work together across these pillars.</p>
+          </div>
+          <Link
+            to="/contact"
+            className="group w-full md:w-auto inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium tracking-wide transition-all hover:bg-primary/90 hover:shadow-[0_0_40px_-8px_var(--primary)]"
+          >
+            Inquire for details
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.5} />
+          </Link>
         </div>
       </section>
     </PageShell>

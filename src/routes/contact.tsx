@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@/lib/router-shim";
 import { PageShell } from "@/components/PageShell";
 import { ArrowUpRight } from "lucide-react";
 
@@ -21,10 +21,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 const channels = [
-  { label: "Email", value: "hello@niladri.co", href: "mailto:hello@niladri.co" },
-  { label: "LinkedIn", value: "in/niladri-chatterjee", href: "https://www.linkedin.com" },
-  { label: "Speaking", value: "speaking@niladri.co", href: "mailto:speaking@niladri.co" },
-  { label: "Advisory", value: "advisory@niladri.co", href: "mailto:advisory@niladri.co" },
+  { label: "Email", value: "niladri.chatterjee86@gmail.com", href: "mailto:niladri.chatterjee86@gmail.com" },
+  { label: "LinkedIn", value: "linkedin.com/niladrichatterjee86/", href: "https://www.linkedin.com/in/niladrichatterjee86/" },
 ];
 
 function Contact() {
@@ -41,7 +39,7 @@ function Contact() {
         </h1>
 
         <p className="mt-4 max-w-xl text-sm text-muted-foreground leading-relaxed">
-          For advisory engagements, speaking inquiries and collaboration —
+          For advisory engagements, career advise and speaking inquiries —
           the channels below reach me directly. Every note is read.
         </p>
 

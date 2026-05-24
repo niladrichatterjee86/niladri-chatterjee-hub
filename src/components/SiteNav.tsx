@@ -1,10 +1,10 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/lib/router-shim";
 import { useEffect, useState } from "react";
 
 const links = [
   { to: "/", label: "Home" },
   { to: "/journey", label: "Journey" },
-  { to: "/blogs", label: "Blogs" },
+  { to: "/blogs", label: "Articles" },
   { to: "/collaborations", label: "Collaborations" },
   { to: "/contact", label: "Contact" },
 ] as const;

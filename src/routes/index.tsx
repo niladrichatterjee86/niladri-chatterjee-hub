@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@/lib/router-shim";
 import { PageShell } from "@/components/PageShell";
 import { ArrowUpRight } from "lucide-react";
 import portrait from "@/assets/niladri-portrait.jpg";
@@ -81,13 +81,15 @@ function Home() {
           </div>
 
           {/* RIGHT: Portrait */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-[220px] h-[290px] md:w-[280px] md:h-[370px] lg:w-[320px] lg:h-[420px]">
-              <img
-                src={portrait}
-                alt="Portrait of Niladri Chatterjee"
-                className="h-full w-full object-cover"
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end self-end w-full">
+            <div className="relative w-full max-w-lg lg:max-w-xl h-[550px] lg:h-[680px] self-end overflow-hidden flex items-end">
+              <img 
+                src={portrait} 
+                className="w-full h-full object-cover object-top brightness-[1.02] contrast-[1.02]" 
+                alt="Niladri Chatterjee" 
               />
+              {/* Absolute precise bottom mask: Restricted to the bottom of the container to protect your face, chin, and collar completely */}
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
             </div>
           </div>
         </div>
