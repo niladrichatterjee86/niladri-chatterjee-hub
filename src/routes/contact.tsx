@@ -30,9 +30,9 @@ const channels = [
 function Contact() {
   return (
     <PageShell>
-      <section className="container-edge pt-12 pb-32">
-        <p className="eyebrow mb-8">Get in touch</p>
-        <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.03em] max-w-4xl">
+      <section className="container-edge flex-1 flex flex-col justify-center py-6 lg:py-8">
+        <p className="eyebrow mb-3">Get in touch</p>
+        <h1 className="text-[clamp(1.75rem,3.6vw,3.25rem)] font-semibold leading-[0.95] tracking-[-0.03em] max-w-4xl">
           Let&apos;s build
           <br />
           <span className="text-muted-foreground">something worth</span>
@@ -40,30 +40,30 @@ function Contact() {
           trusting.
         </h1>
 
-        <p className="mt-10 max-w-xl text-muted-foreground leading-relaxed">
+        <p className="mt-4 max-w-xl text-sm text-muted-foreground leading-relaxed">
           For advisory engagements, speaking inquiries and collaboration —
           the channels below reach me directly. Every note is read.
         </p>
 
-        <div className="hairline h-px w-full mt-20" />
+        <div className="hairline h-px w-full mt-6" />
 
-        <ul className="mt-2 divide-y divide-border">
+        <ul className="mt-1 divide-y divide-border">
           {channels.map((c) => (
             <li key={c.label}>
               <a
                 href={c.href}
-                className="group flex items-center justify-between py-8 hover:px-4 transition-all"
+                className="group flex items-center justify-between py-4 hover:px-4 transition-all"
               >
-                <div className="flex items-baseline gap-8">
-                  <span className="font-mono text-xs text-muted-foreground tracking-widest w-24">
+                <div className="flex items-baseline gap-6">
+                  <span className="font-mono text-[10px] text-muted-foreground tracking-widest w-20">
                     {c.label.toUpperCase()}
                   </span>
-                  <span className="text-2xl md:text-3xl font-display group-hover:text-primary transition-colors">
+                  <span className="text-lg md:text-xl font-display group-hover:text-primary transition-colors">
                     {c.value}
                   </span>
                 </div>
                 <ArrowUpRight
-                  className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:rotate-12 transition-all"
+                  className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:rotate-12 transition-all"
                   strokeWidth={1.2}
                 />
               </a>
@@ -71,17 +71,17 @@ function Contact() {
           ))}
         </ul>
 
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
+        <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
           <div>
-            <p className="eyebrow mb-3">Based</p>
+            <p className="eyebrow mb-2">Based</p>
             <p>Singapore · Global</p>
           </div>
           <div>
-            <p className="eyebrow mb-3">Response time</p>
+            <p className="eyebrow mb-2">Response time</p>
             <p>Within 5 business days</p>
           </div>
           <div>
-            <p className="eyebrow mb-3">Availability</p>
+            <p className="eyebrow mb-2">Availability</p>
             <p>Limited slate — Q3/Q4 2026</p>
           </div>
         </div>
