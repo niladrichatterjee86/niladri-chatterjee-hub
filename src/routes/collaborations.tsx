@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageShell, PageHeader } from "@/components/PageShell";
+import { PageShell } from "@/components/PageShell";
 import { Compass, GraduationCap, Mic } from "lucide-react";
 
 export const Route = createFileRoute("/collaborations")({
@@ -60,40 +60,46 @@ const pillars = [
 function Collaborations() {
   return (
     <PageShell>
-      <PageHeader
-        eyebrow="Ways to work together"
-        title="Three pillars. One operating philosophy."
-        intro="A small, deliberate slate of engagements outside the day job — chosen for impact, not volume."
-      />
+      <section className="container-edge flex-1 flex flex-col justify-center py-6 lg:py-8">
+        <div className="mb-6 lg:mb-8">
+          <p className="eyebrow mb-3">Ways to work together</p>
+          <h1 className="text-3xl md:text-5xl font-semibold leading-[0.95] tracking-tight max-w-3xl">
+            Three pillars. One operating philosophy.
+          </h1>
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground leading-relaxed">
+            A small, deliberate slate of engagements outside the day job —
+            chosen for impact, not volume.
+          </p>
+          <div className="hairline h-px w-full mt-6" />
+        </div>
 
-      <section className="container-edge pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {pillars.map((p) => {
             const Icon = p.icon;
             return (
               <div
                 key={p.n}
-                className="bg-surface/40 border border-border p-10 md:p-12 rounded-xl"
+                className="bg-surface/40 border border-border p-5 lg:p-6 rounded-xl flex flex-col"
               >
-                <div className="flex items-start justify-between mb-10">
-                  <Icon className="h-7 w-7 text-primary" strokeWidth={1.2} />
-                  <span className="font-mono text-xs text-muted-foreground">
+                <div className="flex items-start justify-between mb-4">
+                  <Icon className="h-6 w-6 text-primary" strokeWidth={1.2} />
+                  <span className="font-mono text-[10px] text-muted-foreground">
                     {p.n} / 03
                   </span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
+                <h3 className="text-xl lg:text-2xl font-semibold mb-2 tracking-tight">
                   {p.t}
                 </h3>
-                <p className="text-muted-foreground mb-8 leading-relaxed max-w-md">
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                   {p.s}
                 </p>
-                <ul className="space-y-3 mb-10">
+                <ul className="space-y-2 mb-5">
                   {p.points.map((pt) => (
                     <li
                       key={pt}
-                      className="flex items-start gap-3 text-sm border-t border-border pt-3"
+                      className="flex items-start gap-2 text-xs border-t border-border pt-2"
                     >
-                      <span className="text-primary mt-1">—</span>
+                      <span className="text-primary mt-0.5">—</span>
                       <span>{pt}</span>
                     </li>
                   ))}
