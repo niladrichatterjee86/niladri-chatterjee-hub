@@ -67,16 +67,13 @@ function Collaborations() {
       />
 
       <section className="container-edge pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-border">
-          {pillars.map((p, i) => {
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {pillars.map((p) => {
             const Icon = p.icon;
-            const isFeatured = i === 0;
             return (
               <div
                 key={p.n}
-                className={`bg-background p-10 md:p-14 ${
-                  isFeatured ? "lg:row-span-3 lg:col-span-1" : ""
-                }`}
+                className="bg-surface/40 border border-border p-10 md:p-12 rounded-xl"
               >
                 <div className="flex items-start justify-between mb-10">
                   <Icon className="h-7 w-7 text-primary" strokeWidth={1.2} />
