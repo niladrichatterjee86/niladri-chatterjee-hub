@@ -26,29 +26,29 @@ function Home() {
   return (
     <PageShell>
       {/* HERO */}
-      <section className="container-edge relative pt-12 pb-20 lg:pb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="container-edge relative flex-1 flex items-center py-6 lg:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
           {/* LEFT: Copy + CTA + Stats */}
           <div className="order-2 lg:order-1">
-            <p className="eyebrow mb-6">
+            <p className="eyebrow mb-4">
               Director · YouTube Trust &amp; Safety
             </p>
-            <h1 className="text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.03em]">
+            <h1 className="text-[clamp(2.25rem,4.6vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.03em]">
               Building the
               <br />
               <span className="text-muted-foreground">architecture of</span>
               <br />
               digital trust.
             </h1>
-            <p className="mt-8 max-w-md text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-5 max-w-md text-sm text-muted-foreground leading-relaxed">
               Two decades shaping how the world&apos;s largest platforms govern
               content, deploy AI responsibly, and earn user trust at scale.
             </p>
 
-            <div className="mt-10 flex items-center gap-4">
+            <div className="mt-6 flex items-center gap-4">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-sm font-medium tracking-wide transition-all hover:bg-primary/90 hover:shadow-[0_0_40px_-8px_var(--primary)]"
+                className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium tracking-wide transition-all hover:bg-primary/90 hover:shadow-[0_0_40px_-8px_var(--primary)]"
               >
                 Connect for Advisory
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -61,9 +61,9 @@ function Home() {
               </Link>
             </div>
 
-            <div className="hairline h-px w-full mt-14" />
+            <div className="hairline h-px w-full mt-8" />
 
-            <div className="mt-8 flex gap-10 text-sm">
+            <div className="mt-5 flex gap-10 text-sm">
               <div>
                 <div className="font-display text-2xl">18</div>
                 <div className="text-muted-foreground text-xs mt-1">Years</div>
@@ -81,7 +81,7 @@ function Home() {
 
           {/* RIGHT: Portrait placeholder */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-[280px] h-[360px] md:w-[340px] md:h-[440px] border border-border bg-surface/60 flex items-center justify-center">
+            <div className="relative w-[220px] h-[290px] md:w-[280px] md:h-[370px] lg:w-[320px] lg:h-[420px] border border-border bg-surface/60 flex items-center justify-center">
               {/* Subtle inner frame accent */}
               <div className="absolute inset-3 border border-border/50" />
               <div className="text-center">
