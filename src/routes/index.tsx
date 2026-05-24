@@ -80,15 +80,14 @@ function Home() {
             </div>
           </div>
 
-          {/* RIGHT: Portrait placeholder */}
+          {/* RIGHT: Portrait */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-[220px] h-[290px] md:w-[280px] md:h-[370px] lg:w-[320px] lg:h-[420px] border border-border bg-surface/60">
+            <div className="relative w-[220px] h-[290px] md:w-[280px] md:h-[370px] lg:w-[320px] lg:h-[420px]">
               <img
                 src={portrait}
                 alt="Portrait of Niladri Chatterjee"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="h-full w-full object-cover"
               />
-              <div className="absolute inset-3 border border-border/40 pointer-events-none" />
             </div>
           </div>
         </div>
